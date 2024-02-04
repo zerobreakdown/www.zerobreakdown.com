@@ -1,0 +1,16 @@
+name: Enforce HTTPS
+
+on:
+  push:
+    branches:
+      - main  # or your main branch name
+
+jobs:
+  enforce-https:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Enforce HTTPS
+        run: echo "enforce_https: true" >> .github/settings.yml
