@@ -31,7 +31,219 @@
     <meta name="google-site-verification" content="Llmh5yD_vYbJ6ONFcJpTEeS1VmQu-w678QBHeiD7RHI" />
 
     <style>
-        /* Your CSS styles remain unchanged */
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("static/background.jpg") no-repeat center center fixed,
+                linear-gradient(to right, #d3d3d3 50%, #b0c4de 50%);
+            background-size: contain;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Left car logos */
+        .car-logo-left,
+        .car-logo-left-2,
+        .car-logo-left-3,
+        .car-logo-left-4,
+        .car-logo-left-5,
+        .car-logo-left-6,
+        .car-logo-left-7 {
+            position: absolute;
+            width: 100px; /* Adjust the width as needed */
+            height: auto;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .car-logo-left {
+            top: 0;
+            left: 0;
+        }
+
+        .car-logo-left-2 {
+            top: 15%;
+            left: 0;
+        }
+
+        .car-logo-left-3 {
+            top: 30%;
+            left: 0;
+        }
+
+        .car-logo-left-4 {
+            top: 45%;
+            left: 0;
+        }
+
+        .car-logo-left-5 {
+            top: 60%;
+            left: 0;
+        }
+
+        .car-logo-left-6 {
+            top: 75%;
+            left: 0;
+        }
+
+        .car-logo-left-7 {
+            top: 90%;
+            left: 0;
+        }
+
+        /* Right car logos */
+        .car-logo-right,
+        .car-logo-right-2,
+        .car-logo-right-3,
+        .car-logo-right-4,
+        .car-logo-right-5,
+        .car-logo-right-6,
+        .car-logo-right-7 {
+            position: absolute;
+            width: 100px; /* Adjust the width as needed */
+            height: auto;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .car-logo-right {
+            top: 0;
+            right: 0;
+        }
+
+        .car-logo-right-2 {
+            top: 15%;
+            right: 0;
+        }
+
+        .car-logo-right-3 {
+            top: 30%;
+            right: 0;
+        }
+
+        .car-logo-right-4 {
+            top: 45%;
+            right: 0;
+        }
+
+        .car-logo-right-5 {
+            top: 60%;
+            right: 0;
+        }
+
+        .car-logo-right-6 {
+            top: 72%;
+            right: 0;
+        }
+
+        .car-logo-right-7 {
+            top: 92%;
+            right: 0;
+        }
+
+        .overlay {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            white-space: nowrap;
+            animation: flash 8s linear infinite;
+            transform: translateX(100%);
+        }
+
+        p#garage-services {
+            margin-top: 20px;
+            animation: type 12s linear;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        p.blink {
+            color: blue;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes flash {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            25% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+
+            75% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes type {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        .contact-section {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Added button styling */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
     </style>
 </head>
 
