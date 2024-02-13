@@ -33,68 +33,25 @@
             padding: 0;
             background: url("static/background.jpg") no-repeat center center fixed,
                 linear-gradient(to right, #d3d3d3 50%, #b0c4de 50%);
-            background-size: contain;
+            background-size: cover;
             font-family: Arial, sans-serif;
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+            overflow: auto; /* Enable scrolling */
         }
 
-        /* Left car logos */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Car logos */
         .car-logo-left,
         .car-logo-left-2,
         .car-logo-left-3,
         .car-logo-left-4,
         .car-logo-left-5,
         .car-logo-left-6,
-        .car-logo-left-7 {
-            position: absolute;
-            width: 100px; /* Adjust the width as needed */
-            height: auto;
-            opacity: 0.2;
-            pointer-events: none;
-        }
-
-        .car-logo-left {
-            top: 0;
-            left: 0;
-        }
-
-        .car-logo-left-2 {
-            top: 15%;
-            left: 0;
-        }
-
-        .car-logo-left-3 {
-            top: 30%;
-            left: 0;
-        }
-
-        .car-logo-left-4 {
-            top: 45%;
-            left: 0;
-        }
-
-        .car-logo-left-5 {
-            top: 60%;
-            left: 0;
-        }
-
-        .car-logo-left-6 {
-            top: 75%;
-            left: 0;
-        }
-
-        .car-logo-left-7 {
-            top: 90%;
-            left: 0;
-        }
-
-        /* Right car logos */
+        .car-logo-left-7,
         .car-logo-right,
         .car-logo-right-2,
         .car-logo-right-3,
@@ -102,52 +59,86 @@
         .car-logo-right-5,
         .car-logo-right-6,
         .car-logo-right-7 {
-            position: absolute;
-            width: 100px; /* Adjust the width as needed */
+            width: 80px; /* Adjust the size as needed */
             height: auto;
-            opacity: 0.2;
+            opacity: 0.5; /* Reduced opacity for better background visibility */
+            position: absolute;
             pointer-events: none;
         }
 
+        .car-logo-left {
+            top: 10px;
+            left: 10px;
+        }
+
+        .car-logo-left-2 {
+            top: 20%;
+            left: 10px;
+        }
+
+        .car-logo-left-3 {
+            top: 40%;
+            left: 10px;
+        }
+
+        .car-logo-left-4 {
+            top: 60%;
+            left: 10px;
+        }
+
+        .car-logo-left-5 {
+            top: 80%;
+            left: 10px;
+        }
+
+        .car-logo-left-6 {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .car-logo-left-7 {
+            bottom: 20%;
+            left: 10px;
+        }
+
         .car-logo-right {
-            top: 0;
-            right: 0;
+            top: 10px;
+            right: 10px;
         }
 
         .car-logo-right-2 {
-            top: 15%;
-            right: 0;
+            top: 20%;
+            right: 10px;
         }
 
         .car-logo-right-3 {
-            top: 30%;
-            right: 0;
+            top: 40%;
+            right: 10px;
         }
 
         .car-logo-right-4 {
-            top: 45%;
-            right: 0;
+            top: 60%;
+            right: 10px;
         }
 
         .car-logo-right-5 {
-            top: 60%;
-            right: 0;
+            top: 80%;
+            right: 10px;
         }
 
         .car-logo-right-6 {
-            top: 72%;
-            right: 0;
+            bottom: 10px;
+            right: 10px;
         }
 
         .car-logo-right-7 {
-            top: 92%;
-            right: 0;
+            bottom: 20%;
+            right: 10px;
         }
 
         .overlay {
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
-            overflow: hidden;
             position: relative;
             z-index: 1;
         }
@@ -156,6 +147,7 @@
             white-space: nowrap;
             animation: flash 8s linear infinite;
             transform: translateX(100%);
+            margin-top: 0; /* Remove top margin for h1 */
         }
 
         p#garage-services {
@@ -262,7 +254,7 @@
             .car-logo-right-5,
             .car-logo-right-6,
             .car-logo-right-7 {
-                width: 80px;
+                width: 60px;
             }
         }
 
@@ -281,7 +273,7 @@
             .car-logo-right-5,
             .car-logo-right-6,
             .car-logo-right-7 {
-                width: 60px;
+                width: 40px;
             }
         }
     </style>
@@ -293,52 +285,53 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Left car logos -->
-    <img src="static/MB.jpeg" alt="Mercedes Logo" class="car-logo-left">
-    <img src="static/audi.jpg" alt="Audi Logo" class="car-logo-left-2">
-    <img src="static/range rover.png" alt="Range Rover Logo" class="car-logo-left-3">
-    <img src="static/kia logo.jpg" alt="Kia Logo" class="car-logo-left-4">
-    <img src="static/jeep.jpg" alt="Jeep Logo" class="car-logo-left-5">
-    <!-- Two new logos added -->
-    <img src="static/honda.jpg" alt="Honda Logo" class="car-logo-left-6">
-    <img src="static/crysler.jpg" alt="Ford Logo" class="car-logo-left-7">
+    <div class="container">
+        <!-- Car logos -->
+        <img src="static/MB.jpeg" alt="Mercedes Logo" class="car-logo-left">
+        <img src="static/audi.jpg" alt="Audi Logo" class="car-logo-left-2">
+        <img src="static/range rover.png" alt="Range Rover Logo" class="car-logo-left-3">
+        <img src="static/kia logo.jpg" alt="Kia Logo" class="car-logo-left-4">
+        <img src="static/jeep.jpg" alt="Jeep Logo" class="car-logo-left-5">
+        <!-- Two new logos added -->
+        <img src="static/honda.jpg" alt="Honda Logo" class="car-logo-left-6">
+        <img src="static/crysler.jpg" alt="Ford Logo" class="car-logo-left-7">
 
-    <!-- Right car logos -->
-    <img src="static/bmw.jpeg" alt="BMW Logo" class="car-logo-right">
-    <img src="static/cooper logo.jpg" alt="Mini Cooper Logo" class="car-logo-right-2">
-    <img src="static/toyota logo.png" alt="Toyota Logo" class="car-logo-right-3">
-    <img src="static/hyundai logo.jpg" alt="Hyundai Logo" class="car-logo-right-4">
-    <img src="static/porsche1.jpg" alt="Infinity Logo" class="car-logo-right-5">
-    <!-- three new logos added -->
-    <img src="static/mazda1.jpg" alt="Mazda Logo" class="car-logo-right-6">
-    <img src="static/infinity.jpg" alt="Lexus Logo" class="car-logo-right-7">
+        <img src="static/bmw.jpeg" alt="BMW Logo" class="car-logo-right">
+        <img src="static/cooper logo.jpg" alt="Mini Cooper Logo" class="car-logo-right-2">
+        <img src="static/toyota logo.png" alt="Toyota Logo" class="car-logo-right-3">
+        <img src="static/hyundai logo.jpg" alt="Hyundai Logo" class="car-logo-right-4">
+        <img src="static/porsche1.jpg" alt="Infinity Logo" class="car-logo-right-5">
+        <!-- three new logos added -->
+        <img src="static/mazda1.jpg" alt="Mazda Logo" class="car-logo-right-6">
+        <img src="static/infinity.jpg" alt="Lexus Logo" class="car-logo-right-7">
 
-    <div class="overlay">
-        <h1>Welcome to Zero Breakdown Garage, Elias Daniel</h1>
-        <p id="garage-services">Repairing all kinds of vehicles, Advanced and pre-Advanced, Car Scanner, Fault Diagnosis, Coding, Programming, Engine Overhauling, Transmission Rebuilding. Injectors Cleaning...</p>
-        <p class="blink">We are here to serve you better !!!</p>
-        <p>Managed by experts</p>
-        <p>Owner: Elias Daniel</p>
+        <div class="overlay">
+            <h1>Welcome to Zero Breakdown Garage, Elias Daniel</h1>
+            <p id="garage-services">Repairing all kinds of vehicles, Advanced and pre-Advanced, Car Scanner, Fault Diagnosis, Coding, Programming, Engine Overhauling, Transmission Rebuilding. Injectors Cleaning...</p>
+            <p class="blink">We are here to serve you better !!!</p>
+            <p>Managed by experts</p>
+            <p>Owner: Elias Daniel</p>
 
-        <!-- Corrected ID for the contact section -->
-        <div class="contact-section">
-            <button onclick="toggleContact()">Contact Us</button>
-            <button onclick="toggleSpareParts()">Spare Parts</button>
-        </div>
+            <!-- Corrected ID for the contact section -->
+            <div class="contact-section">
+                <button onclick="toggleContact()">Contact Us</button>
+                <button onclick="toggleSpareParts()">Spare Parts</button>
+            </div>
 
-        <div id="contact-section" class="contact-section" style="display: none;">
-            <p>E-mail: eliasdanielpm@hotmail.com</p>
-            <p>Contact Number: +961-70-401652</p>
-            <!-- Added label for better accessibility -->
-            <p id="location-paragraph">Location: <button id="location-button" onclick="getLocation()">Get Location</button></p>
-        </div>
+            <div id="contact-section" class="contact-section" style="display: none;">
+                <p>E-mail: eliasdanielpm@hotmail.com</p>
+                <p>Contact Number: +961-70-401652</p>
+                <!-- Added label for better accessibility -->
+                <p id="location-paragraph">Location: <button id="location-button" onclick="getLocation()">Get Location</button></p>
+            </div>
 
-        <!-- Spare Parts button and section -->
-        <div id="spare-parts-section" class="contact-section" style="display: none;">
-            <p>Spare Parts List:</p>
-            <ul>
-                <!-- Add more parts as needed -->
-            </ul>
+            <!-- Spare Parts button and section -->
+            <div id="spare-parts-section" class="contact-section" style="display: none;">
+                <p>Spare Parts List:</p>
+                <ul>
+                    <!-- Add more parts as needed -->
+                </ul>
+            </div>
         </div>
     </div>
 
