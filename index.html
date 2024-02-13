@@ -244,6 +244,45 @@
         button:hover {
             background-color: #2980b9;
         }
+
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            .car-logo-left,
+            .car-logo-left-2,
+            .car-logo-left-3,
+            .car-logo-left-4,
+            .car-logo-left-5,
+            .car-logo-left-6,
+            .car-logo-left-7,
+            .car-logo-right,
+            .car-logo-right-2,
+            .car-logo-right-3,
+            .car-logo-right-4,
+            .car-logo-right-5,
+            .car-logo-right-6,
+            .car-logo-right-7 {
+                width: 80px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .car-logo-left,
+            .car-logo-left-2,
+            .car-logo-left-3,
+            .car-logo-left-4,
+            .car-logo-left-5,
+            .car-logo-left-6,
+            .car-logo-left-7,
+            .car-logo-right,
+            .car-logo-right-2,
+            .car-logo-right-3,
+            .car-logo-right-4,
+            .car-logo-right-5,
+            .car-logo-right-6,
+            .car-logo-right-7 {
+                width: 60px;
+            }
+        }
     </style>
 </head>
 
@@ -276,7 +315,7 @@
 
     <div class="overlay">
         <h1>Welcome to Zero Breakdown Garage, Elias Daniel</h1>
-        <p id="garage-services">Repairing all kinds of vehicles, advanced and pre-advanced, car scanner, fault diagnosis, coding, programming, engine overhauling, transmission rebuilding.</p>
+        <p id="garage-services">Repairing all kinds of vehicles, Advanced and pre-Advanced, Car Scanner, Fault Diagnosis, Coding, Programming, Engine Overhauling, Transmission Rebuilding. Injectors Cleaning...</p>
         <p class="blink">We are here to serve you better !!!</p>
         <p>Managed by experts</p>
         <p>Owner: Elias Daniel</p>
@@ -319,7 +358,7 @@
         function showPosition(position) {
             var locationParagraph = document.getElementById("location-paragraph");
             locationParagraph.innerHTML = "Location: Latitude " + position.coords.latitude + ", Longitude " + position.coords.longitude +
-                " <a href='https://www.google.com/maps?q=33.8995270,35.7316170' target='_blank'>Open Map</a>";
+                " <a href='https://www.google.com/maps?q=33.8966330,35.7586200' target='_blank'>Open Map</a>";
         }
 
         function toggleSpareParts() {
@@ -330,4 +369,3 @@
 </body>
 
 </html>
-
