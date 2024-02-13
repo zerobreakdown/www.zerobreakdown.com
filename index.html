@@ -212,10 +212,11 @@
 
         .contact-section {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             margin-top: 20px;
+        }
+
+        .contact-section button {
+            margin: 0 10px; /* Adjust the margin as needed */
         }
 
         .blink {
@@ -242,7 +243,6 @@
             color: #fff;
             border: none;
             border-radius: 5px;
-            margin: 10px;
         }
 
         button:hover {
@@ -327,21 +327,22 @@
         <!-- Corrected ID for the contact section -->
         <div class="contact-section">
             <button onclick="toggleContact()">Contact Us</button>
-            <div id="contact-section" class="contact-section" style="display: none;">
-                <p>E-mail: eliasdanielpm@hotmail.com</p>
-                <p>Contact Number: +961-70-401652</p>
-                <!-- Added label for better accessibility -->
-                <p id="location-paragraph">Location: <button id="location-button" onclick="getLocation()">Get Location</button></p>
-            </div>
-
-            <!-- Spare Parts button and section -->
             <button onclick="toggleSpareParts()">Spare Parts</button>
-            <div id="spare-parts-section" class="contact-section" style="display: none;">
-                <p>Spare Parts List:</p>
-                <ul>
-                    <!-- Add more parts as needed -->
-                </ul>
-            </div>
+        </div>
+
+        <div id="contact-section" class="contact-section" style="display: none;">
+            <p>E-mail: eliasdanielpm@hotmail.com</p>
+            <p>Contact Number: +961-70-401652</p>
+            <!-- Added label for better accessibility -->
+            <p id="location-paragraph">Location: <button id="location-button" onclick="getLocation()">Get Location</button></p>
+        </div>
+
+        <!-- Spare Parts button and section -->
+        <div id="spare-parts-section" class="contact-section" style="display: none;">
+            <p>Spare Parts List:</p>
+            <ul>
+                <!-- Add more parts as needed -->
+            </ul>
         </div>
     </div>
 
