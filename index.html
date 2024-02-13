@@ -211,7 +211,10 @@
         }
 
         .contact-section {
-            display: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             margin-top: 20px;
         }
 
@@ -239,6 +242,7 @@
             color: #fff;
             border: none;
             border-radius: 5px;
+            margin: 10px;
         }
 
         button:hover {
@@ -321,69 +325,27 @@
         <p>Owner: Elias Daniel</p>
 
         <!-- Corrected ID for the contact section -->
-        <button onclick="toggleContact()">Contact Us</button>
+        <div class="contact-section">
+            <button onclick="toggleContact()">Contact Us</button>
+            <div id="contact-section" class="contact-section" style="display: none;">
+                <p>E-mail: eliasdanielpm@hotmail.com</p>
+                <p>Contact Number: +961-70-401652</p>
+                <!-- Added label for better accessibility -->
+                <p id="location-paragraph">Location: <button id="location-button" onclick="getLocation()">Get Location</button></p>
+            </div>
 
-        <div id="contact-section" class="contact-section">
-            <p>E-mail: eliasdanielpm@hotmail.com</p>
-            <p>Contact Number: +961-70-401652</p>
-            <!-- Added label for better accessibility -->
-            <p id="location-paragraph">Location: <button id="location-button" onclick="getLocation()">Get Location</button></p>
-        </div>
-
-        <!-- Spare Parts button and section -->
-        <button onclick="toggleSpareParts()">Spare Parts</button>
-
-        <div id="spare-parts-section" class="contact-section" style="display: none;">
-            <p>Spare Parts List:</p>
-            <ul>
-                <!-- Add more parts as needed -->
-            </ul>
+            <!-- Spare Parts button and section -->
+            <button onclick="toggleSpareParts()">Spare Parts</button>
+            <div id="spare-parts-section" class="contact-section" style="display: none;">
+                <p>Spare Parts List:</p>
+                <ul>
+                    <!-- Add more parts as needed -->
+                </ul>
+            </div>
         </div>
     </div>
 
     <script>
-        var touchStartX = 0;
-        var touchEndX = 0;
-
-        document.addEventListener('touchstart', function(event) {
-            touchStartX = event.touches[0].clientX;
-        }, false);
-
-        document.addEventListener('touchmove', function(event) {
-            touchEndX = event.touches[0].clientX;
-        }, false);
-
-        document.addEventListener('touchend', function(event) {
-            handleGesture();
-        }, false);
-
-        function handleGesture() {
-            if (touchEndX < touchStartX) {
-                // Swipe left, move logos to the right
-                moveLogos('right', 10);
-            } else if (touchEndX > touchStartX) {
-                // Swipe right, move logos to the left
-                moveLogos('left', 10);
-            }
-        }
-
-        function moveLogos(direction, distance) {
-            var logos = document.querySelectorAll('.car-logo-left, .car-logo-left-2, .car-logo-left-3, .car-logo-left-4, .car-logo-left-5, .car-logo-left-6, .car-logo-left-7, .car-logo-right, .car-logo-right-2, .car-logo-right-3, .car-logo-right-4, .car-logo-right-5, .car-logo-right-6, .car-logo-right-7');
-
-            for (var i = 0; i < logos.length; i++) {
-                var currentLeft = parseInt(logos[i].style.left) || 0;
-                var currentRight = parseInt(logos[i].style.right) || 0;
-
-                if (direction === 'left') {
-                    logos[i].style.left = (currentLeft - distance) + 'px';
-                    logos[i].style.right = '';
-                } else if (direction === 'right') {
-                    logos[i].style.right = (currentRight - distance) + 'px';
-                    logos[i].style.left = '';
-                }
-            }
-        }
-
         function toggleContact() {
             var contactSection = document.getElementById("contact-section");
             contactSection.style.display = (contactSection.style.display === "none") ? "block" : "none";
