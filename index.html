@@ -158,8 +158,9 @@
         p#garage-services {
             margin-top: 20px;
             animation: type 12s linear;
-            overflow: hidden;
-            white-space: nowrap;
+            overflow: visible; /* Adjusted overflow */
+            white-space: normal; /* Adjusted white-space */
+            font-size: 16px; /* Adjusted font size for better readability */
         }
 
         p.blink {
