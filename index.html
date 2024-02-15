@@ -1,39 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KSGBSZCX');</script>
-<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zero Breakdown Garage</title>
-    <meta name="description" content="Zero Breakdown Garage - Your trusted destination for vehicle repairs, spare parts, and services. Specializing in Mercedes, BMW, Toyota, and more.">
-    <meta name="keywords" content="garage, workshop, spare parts, used spare parts, Mercedes, BMW, Toyota, best garage, car repair, vehicle services">
-    <meta name="author" content="Elias Daniel">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL8NS5QZS6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TL8NS5QZS6');
-</script>
-
-    <!-- Google Verification Code -->
-    <meta name="google-site-verification" content="Llmh5yD_vYbJ6ONFcJpTEeS1VmQu-w678QBHeiD7RHI" />
-
     <style>
         body {
-            <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSGBSZCX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
             margin: 0;
             padding: 0;
             background: url("static/background.jpg") no-repeat center center fixed,
@@ -49,57 +21,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             position: relative;
         }
 
-        /* Left car logos */
+        /* Adjust car logos for smaller screens */
         .car-logo-left,
         .car-logo-left-2,
         .car-logo-left-3,
         .car-logo-left-4,
         .car-logo-left-5,
         .car-logo-left-6,
-        .car-logo-left-7 {
-            position: absolute;
-            width: 100px; /* Adjust the width as needed */
-            height: auto;
-            opacity: 0.2;
-            pointer-events: none;
-        }
-
-        .car-logo-left {
-            top: 0;
-            left: 0;
-        }
-
-        .car-logo-left-2 {
-            top: 15%;
-            left: 0;
-        }
-
-        .car-logo-left-3 {
-            top: 30%;
-            left: 0;
-        }
-
-        .car-logo-left-4 {
-            top: 45%;
-            left: 0;
-        }
-
-        .car-logo-left-5 {
-            top: 60%;
-            left: 0;
-        }
-
-        .car-logo-left-6 {
-            top: 75%;
-            left: 0;
-        }
-
-        .car-logo-left-7 {
-            top: 90%;
-            left: 0;
-        }
-
-        /* Right car logos */
+        .car-logo-left-7,
         .car-logo-right,
         .car-logo-right-2,
         .car-logo-right-3,
@@ -107,46 +36,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         .car-logo-right-5,
         .car-logo-right-6,
         .car-logo-right-7 {
-            position: absolute;
-            width: 100px; /* Adjust the width as needed */
+            width: 50px;
             height: auto;
             opacity: 0.2;
             pointer-events: none;
-        }
-
-        .car-logo-right {
-            top: 0;
-            right: 0;
-        }
-
-        .car-logo-right-2 {
-            top: 15%;
-            right: 0;
-        }
-
-        .car-logo-right-3 {
-            top: 30%;
-            right: 0;
-        }
-
-        .car-logo-right-4 {
-            top: 45%;
-            right: 0;
-        }
-
-        .car-logo-right-5 {
-            top: 60%;
-            right: 0;
-        }
-
-        .car-logo-right-6 {
-            top: 72%;
-            right: 0;
-        }
-
-        .car-logo-right-7 {
-            top: 92%;
-            right: 0;
         }
 
         .overlay {
@@ -248,7 +141,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
     </style>
 </head>
-
 <body>
     <!-- Left car logos -->
     <img src="static/MB.jpeg" alt="Mercedes Logo" class="car-logo-left">
@@ -277,7 +169,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Managed by experts</p>
         <p>Owner: Elias Daniel</p>
 
-        <!-- Corrected ID for the contact section -->
         <button onclick="toggleContact()">Contact Us</button>
 
         <div id="contact-section" class="contact-section">
@@ -287,7 +178,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p id="location-paragraph">Location: <button id="location-button" onclick="getLocation()">Get Location</button></p>
         </div>
 
-        <!-- Spare Parts button and section -->
         <button onclick="toggleSpareParts()">Spare Parts</button>
 
         <div id="spare-parts-section" class="contact-section" style="display: none;">
@@ -304,7 +194,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>
         function toggleContact() {
             var contactSection = document.getElementById("contact-section");
-            contactSection.style.display = (contactSection.style.display === "none") ? "block" : "none";
+            if (window.getComputedStyle(contactSection).display === "none") {
+                contactSection.style.display = "block";
+            } else {
+                contactSection.style.display = "none";
+            }
         }
 
         function getLocation() {
@@ -323,9 +217,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         function toggleSpareParts() {
             var sparePartsSection = document.getElementById("spare-parts-section");
-            sparePartsSection.style.display = (sparePartsSection.style.display === "none") ? "block" : "none";
+            if (sparePartsSection.style.display === "none" || sparePartsSection.style.display === "") {
+                sparePartsSection.style.display = "block";
+            } else {
+                sparePartsSection.style.display = "none";
+            }
         }
     </script>
 </body>
-
 </html>
